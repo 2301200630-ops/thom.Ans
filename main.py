@@ -112,14 +112,15 @@ HTML_TEMPLATE = """
                 <img src="https://media.tenor.com/7S8fbeXo_68AAAAi/hello-kitty-crying.gif" alt="Hello Kitty Crying">
             </div>
             {% endif %}
-        </div> <form action="{{ url_for('siguiente') }}" method="POST">
-            <button type="submit" class="btn">Siguiente ✨</button>
-        </form>
-     <form action="{{ url_for('cerrar') }}" method="POST">
-            <button type="submit" class="btn"onclick="window.close();>cerrar 💞</button>
-        </form>
-    </div>
-</body>
+    </div> <form action="{{ url_for('siguiente') }}" method="POST">
+        <button type="submit" class="btn">Siguiente ✨</button>
+    </form>
+
+    <form action="{{ url_for('cerrar') }}" method="POST">
+        <button type="submit" class="btn" onclick="window.close();">cerrar 💞</button>
+    </form>
+
+</div> </body>
 </html>
 """
 

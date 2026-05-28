@@ -7,14 +7,14 @@ app.secret_key = 'clave_secreta_super_segura'
 # --- TUS VERSOS Y LA FRASE FINAL ---
 versos = [
     "Esto podría ser lo más p#to que escribo",
-    "regresa conmigo y no te arrepentirás.",
+    "Regresa conmigo y no te arrepentirás.",
     "Sé que todo ha estado un poco torcido",
-    "tan solo te pido otra oportunidad.",
+    "Tan solo te pido otra oportunidad.",
     "No seas tonto, claro que no te olvido",
-    "de tan adolorido voy a darme un tiro.",
+    "De tan adolorido voy a darme un tiro.",
     "Que haberte conocido lo ha sido todo"
-    "no me mires así, bombón",
-    "con esos ojitos de miope que se me rompe el corazón.",
+    "No me mires así, bombón",
+    "Con esos ojitos de miope que se me rompe el corazón.",
     "Te amo mi negro, perdón. <‘3"
 ]
 

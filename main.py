@@ -95,6 +95,8 @@ HTML_TEMPLATE = """
             cursor: pointer;
             box-shadow: 0 2px 5px rgba(255, 77, 109, 0.2);
             transition: background 0.2s;
+            margin: 10px auto;
+            display: block;
         }
         .btn:hover {
             background-color: #ff758f;
@@ -104,7 +106,7 @@ HTML_TEMPLATE = """
 <body>
     <div class="card">
         <div class="ribbon">🎀</div>
-        <div class="title">✨ Tú - Tino el pingÜino ✨</div>
+        <div class="title">✨ Tú - Tino el PingÜino ✨</div>
         <div class="verse-container">
             <p class="verse">{{ verso }}</p>
             {% if es_ultimo %}
@@ -112,16 +114,19 @@ HTML_TEMPLATE = """
                 <img src="https://media.tenor.com/7S8fbeXo_68AAAAi/hello-kitty-crying.gif" alt="Hello Kitty Crying">
             </div>
             {% endif %}
-</div> 
-    <form action="{{ url_for('siguiente') }}" method="POST">
-        <button type="submit" class="btn">Siguiente ✨</button>
-    </form>
+        </div>
+        
+        <!-- BOTÓN SIGUIENTE -->
+        <form action="{{ url_for('siguiente') }}" method="POST">
+            <button type="submit" class="btn">Siguiente ✨</button>
+        </form>
 
-    <form action="{{ url_for('cerrar') }}" method="POST">
-        <button type="submit" class="btn" onclick="window.close();">cerrar 💞</button>
-    </form>
-
-</div> </body>
+        <!-- BOTÓN CERRAR AGREGADO PERFECTAMENTE -->
+        <form action="{{ url_for('cerrar') }}" method="POST">
+            <button type="submit" class="btn" onclick="window.close();">cerrar 💞</button>
+        </form>
+    </div>
+</body>
 </html>
 """
 
@@ -134,7 +139,6 @@ def index():
         session['current_index'] = 0
         
     verso_actual = versos[session['current_index']]
-    # Verifica si es el último cuadro de diálogo para mostrar el GIF
     es_ultimo = (session['current_index'] == len(versos) - 1)
     
     return render_template_string(HTML_TEMPLATE, verso=verso_actual, es_ultimo=es_ultimo)
@@ -146,6 +150,16 @@ def siguiente():
     else:
         session['current_index'] = 0
     return redirect(url_for('index'))
+
+@app.route('/cerrar', methods=['POST'])
+def cerrar():
+    session.clear()
+    return """
+    <script>
+        window.close();
+        document.write('<h2 style="color: #ff4d6d; text-align: center; font-family: sans-serif; margin-top: 50px;">¡Gracias por leer! Ya puedes cerrar esta pestañita. 💕</h2>');
+    </script>
+    """
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))

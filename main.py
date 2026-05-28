@@ -12,7 +12,7 @@ versos = [
     "Tan solo te pido otra oportunidad.",
     "No seas tonto, claro que no te olvido",
     "De tan adolorido voy a darme un tiro.",
-    "Que haberte conocido lo ha sido todo"
+    "Que haberte conocido lo ha sido todo",
     "No me mires así, bombón",
     "Con esos ojitos de miope que se me rompe el corazón.",
     "Te amo mi negro, perdón. <‘3"

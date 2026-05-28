@@ -10,8 +10,8 @@ versos = [
     "Y no logro entender por qué fuiste tan cruel",
     "No tenía motivos para sospechar",
     "Todos apuntaban, yo no quise mirar",
-    "Era tanta ironía, realidad confundida",
-    "No sé, mis ojos no podían ver.",
+    "Tanta ironía, realidad confundida",
+    "Tus ojos no podían ver.",
     "Te amo mi negro, perdón. <‘3"
 ]
 
@@ -21,7 +21,7 @@ HTML_TEMPLATE = """
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Ti</title>
+    <title>Mi amor 💕</title>
     <style>
         body {
             background-color: #fce4ec;
@@ -63,6 +63,7 @@ HTML_TEMPLATE = """
             background-color: #fffdfd;
             min-height: 60px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
         }
@@ -71,6 +72,13 @@ HTML_TEMPLATE = """
             font-size: 16px;
             line-height: 1.5;
             margin: 0;
+        }
+        .gif-container {
+            margin-top: 15px;
+        }
+        .gif-container img {
+            max-width: 150px;
+            height: auto;
         }
         /* Botón ovalado estilo la imagen de referencia */
         .btn {
@@ -96,6 +104,11 @@ HTML_TEMPLATE = """
         <div class="title">✨ Mis Ojos No Podían Ver - Charles Ans ✨</div>
         <div class="verse-container">
             <p class="verse">{{ verso }}</p>
+            {% if es_ultimo %}
+            <div class="gif-container">
+                <img src="https://media.tenor.com/7S8fbeXo_68AAAAi/hello-kitty-crying.gif" alt="Hello Kitty Crying">
+            </div>
+            {% endif %}
         </div>
         <form action="{{ url_for('siguiente') }}" method="POST">
             <button type="submit" class="btn">Siguiente ✨</button>
@@ -114,7 +127,10 @@ def index():
         session['current_index'] = 0
         
     verso_actual = versos[session['current_index']]
-    return render_template_string(HTML_TEMPLATE, verso=verso_actual)
+    # Verifica si es el último cuadro de diálogo para mostrar el GIF
+    es_ultimo = (session['current_index'] == len(versos) - 1)
+    
+    return render_template_string(HTML_TEMPLATE, verso=verso_actual, es_ultimo=es_ultimo)
 
 @app.route('/siguiente', methods=['POST'])
 def siguiente():

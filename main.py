@@ -117,6 +117,10 @@ HTML_TEMPLATE = """
             <button type="submit" class="btn">Siguiente ✨</button>
         </form>
     </div>
+     <form action="{{ url_for('cerrar') }}" method="POST">
+            <button type="submit" class="btn"onclick="window.close();>cerrar 💞</button>
+        </form>
+    </div>
 </body>
 </html>
 """

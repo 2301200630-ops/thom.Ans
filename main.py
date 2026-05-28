@@ -6,12 +6,15 @@ app.secret_key = 'clave_secreta_super_segura'
 
 # --- TUS VERSOS Y LA FRASE FINAL ---
 versos = [
-    "Tengo días pensando en ti",
-    "Y no logro entender por qué fuiste tan cruel",
-    "No tenía motivos para sospechar",
-    "Todos apuntaban, yo no quise mirar",
-    "Tanta ironía, realidad confundida",
-    "Tus ojos no podían ver.",
+    "Esto podría ser lo más p#to que escribo",
+    "regresa conmigo y no te arrepentirás.",
+    "Sé que todo ha estado un poco torcido",
+    "tan solo te pido otra oportunidad.",
+    "No seas tonto, claro que no te olvido",
+    "de tan adolorido voy a darme un tiro.",
+    "Que haberte conocido lo ha sido todo"
+    "no me mires así, bombón",
+    "con esos ojitos de miope que se me rompe el corazón.",
     "Te amo mi negro, perdón. <‘3"
 ]
 
@@ -101,7 +104,7 @@ HTML_TEMPLATE = """
 <body>
     <div class="card">
         <div class="ribbon">🎀</div>
-        <div class="title">✨ Mis Ojos No Podían Ver - Charles Ans ✨</div>
+        <div class="title">✨ Tú - Tino el pingÜino ✨</div>
         <div class="verse-container">
             <p class="verse">{{ verso }}</p>
             {% if es_ultimo %}

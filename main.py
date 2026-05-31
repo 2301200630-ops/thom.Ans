@@ -15,7 +15,6 @@ versos = [
     "Que haberte conocido lo ha sido todo",
     "No me mires así, bombón",
     "Con esos ojitos de miope que se me rompe el corazón.",
-    "Te amo mi negro, perdón. <‘3"
 ]
 
 HTML_TEMPLATE = """
